@@ -1,0 +1,11 @@
+prefix=/Users/LiangXin/Documents/HPC/research/FFT/fftw-3.3.5/sequential/utils/oopopt_ref
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: FFTW
+Description: fast Fourier transform library
+Version: 3.3.5
+Libs: -L${libdir} -lfftw3 
+Libs.private: -lm
+Cflags: -I${includedir}

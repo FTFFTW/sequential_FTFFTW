@@ -1,0 +1,21 @@
+changes of out-of-place sequential FT-FFTW vs FFTW:
+
+api/
+	plan-dft-1d.c: 		add global variable fftSize
+
+kernel/
+	trig.c 				add DMR to twiddle multiplication
+
+dft/
+	vrank-geq1.c:		modify function apply
+						copy and modify trig functions from kernel/trig.c
+						add global variables start, radix, inAddr, extern variable fftSize
+						add function 	checksumVectorRA1Generation, checksumGeneration, 
+										checksumInit, simpleCoefficientGeneration, coefficientGeneration, checksumGeneration1,
+										outputVerification, errorCorrection, outChecksumIncrease
+
+	dftw-genericbuf.c:	modify function apply, bytwiddle
+						copy and modify trig functions from kernel/trig.c
+						add extern variables outChecksum1, outChecksum2, simpleCoeff, inAddr
+						add global variable outputChecksum, memoryChecksum1, memoryChecksum2, rA2, count
+						add function 	checksumVectorRAGeneration2, finalOutputCorrection, finalOutputVerification
